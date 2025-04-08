@@ -4,10 +4,10 @@ module.version = "2.0." .. rev
 module.unit = "player"
 module.defaults = {
 	Enabled = true,
-	Outline = true,
+	Outline = false,
 	ShowText = true,
-	ShowPerc = true,
-	ShowLabel = true,
+	ShowPerc = false,
+	ShowLabel = false,
 	Side = 2,
 	Level = 0,
 }
@@ -23,9 +23,9 @@ function module:Initialize()
 	-- Setup the frame we need
 	self.f = self:CreateRing(true, MageHUDFrame)
 
-	self.ShieldText = self:CreateFontString(self.f, "BACKGROUND", { 150, 15 }, 14, "LEFT", { 1.0, 1.0, 0.0 }, { "TOPLEFT", MageHUDFrameText, "TOPLEFT", 0, 0 })
-	self.ShieldPerc = self:CreateFontString(self.f, "BACKGROUND", { 40, 14 }, 12, "LEFT", { 1.0, 1.0, 1.0 }, { "TOPLEFT", self.ShieldText, "BOTTOMLEFT", 0, 0 })
-	self.Label = self:CreateFontString(self.f, "BACKGROUND", { 200, 15 }, 12, "LEFT", { 1.0, 1.0, 1.0 }, { "TOPLEFT", self.ShieldPerc, "BOTTOMLEFT", -50, 0 })
+	self.ShieldText = self:CreateFontString(self.f, "BACKGROUND", { 150, 19 }, 18, "LEFT", { 1.0, 1.0, 0.0 }, { "TOPLEFT", MageHUDFrameText, "TOPLEFT", 100, -65 })
+	self.ShieldPerc = self:CreateFontString(self.f, "BACKGROUND", { 60, 17 }, 16, "LEFT", { 1.0, 1.0, 1.0 }, { "TOPLEFT", self.ShieldText, "BOTTOMLEFT", 0, 0 })
+	self.Label = self:CreateFontString(self.f, "BACKGROUND", { 200, 17 }, 16, "LEFT", { 1.0, 1.0, 1.0 }, { "TOPLEFT", self.ShieldPerc, "BOTTOMLEFT", -20, 0 })
 end
 
 function module:Update()
